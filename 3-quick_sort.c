@@ -29,18 +29,26 @@ void swap(int *a, int *b)
  */
 int lomuto_partition(int *array, size_t size, int left, int right)
 {
-	int pivot = array[right], j, i = left;
+	int pivot, j, i = left;
 
+	pivot = array[right];
 	for (j = left; j < right; j++)
 	{
-		if (array[j] <= pivot)
+		if (array[j] < pivot)
 		{
 			swap(&array[i], &array[j]);
+			if (i != j)
+			{
+				print_array(array, size);
+			}
 			i++;
 		}
 	}
 	swap(&array[i], &array[right]);
-	print_array(array, size);
+	if (i != right)
+	{
+		print_array(array, size);
+	}
 	return (i);
 }
 /**
