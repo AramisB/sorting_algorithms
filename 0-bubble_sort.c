@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include "sort.h"
-
+#include <stdbool.h>
+/**
+ * swap - swaps x and y
+ * @x: first element
+ * @y: second element
+ *
+ */
+void swap(int *x, int *y)
+{
+	int temp = *x;
+	*x = *y;
+	*y = temp;
+}
 /**
  * bubble_sort - a function that sorts an array of integers
  * in ascending order using the Bubble sort algorithm
